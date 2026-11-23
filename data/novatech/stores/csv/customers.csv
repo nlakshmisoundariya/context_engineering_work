@@ -1,0 +1,26 @@
+customer_id,name,industry,segment,region,deployment_model,deployment_updated_at,primary_contact,account_owner,created_at
+CUST-0001,Orbital Foods,food,enterprise,India West,cloud,2026-05-02,Tomas Ferreira (Head of Integration),P2,2023-04-11
+CUST-0002,Kestrel Logistics,logistics,mid-market,India South,on_prem,2024-02-19,Anika Rao (Network Manager),P2,2024-02-19
+CUST-0003,Bluewater Retail Group,retail,enterprise,EMEA,hybrid,2026-04-15,Gareth Lindqvist (Data Platform Owner),P2,2023-09-05
+CUST-0004,Harbor & Lane Insurance,insurance,enterprise,North America,on_prem,2024-10-28,Renata Okoye (Integration Architect),P2,2024-10-28
+CUST-0005,Cindral Manufacturing,manufacturing,enterprise,APAC,cloud,2026-03-09,Hiro Tanabe (Plant Systems Lead),P2,2023-06-20
+CUST-0006,Aster Materials,manufacturing,mid-market,India North,on_prem,2024-11-04,Sunita Bhatt (IT Manager),P2,2024-11-04
+CUST-0007,Veltrona Media,media,mid-market,EMEA,cloud,2024-03-25,Marco Bellini (Broadcast Operations),P2,2024-03-25
+CUST-0008,Quillstone Analytics,analytics,mid-market,North America,cloud,2025-03-17,Joanna Prakash (VP Engineering),P2,2025-03-17
+CUST-0009,Larchmont Insights,analytics,mid-market,India South,cloud,2023-05-01,Bram Castellano (Platform Engineer),P2,2023-05-01
+CUST-0010,Ironvale Provisions,food,mid-market,India North,on_prem,2024-04-23,Leandro Ortega (IT Manager),P2,2024-04-23
+CUST-0011,Glenvarra Assurance,insurance,enterprise,APAC,hybrid,2023-10-23,Kavya Fonseca (IT Manager),P2,2023-10-23
+CUST-0012,Saltmere Freight,logistics,mid-market,EMEA,cloud,2024-10-08,Kavya Engstrom (Head of Data),P2,2024-10-08
+CUST-0013,Ottervale Works,manufacturing,mid-market,India West,hybrid,2025-06-07,Mina Pillai (Head of Data),P2,2025-06-07
+CUST-0014,Kelderby Studios,media,mid-market,India South,cloud,2023-11-13,Carys Lombardi (Integration Lead),P2,2023-11-13
+CUST-0015,Jessamyn Stores,retail,mid-market,APAC,on_prem,2023-12-13,Nikhil Castellano (Head of Data),P2,2023-12-13
+CUST-0016,Nethercote Insights,analytics,enterprise,APAC,on_prem,2025-01-23,Bram Bhandari (Head of Data),P2,2025-01-23
+CUST-0017,Wexmoor Provisions,food,enterprise,APAC,on_prem,2023-05-27,Farid Achterberg (Operations Director),P2,2023-05-27
+CUST-0018,Arvelle Assurance,insurance,enterprise,India West,on_prem,2025-08-02,Mina Bhandari (Head of Data),P2,2025-08-02
+CUST-0019,Quarrendon Freight,logistics,mid-market,India West,on_prem,2023-08-06,Elif Jovanovic (Operations Director),P2,2023-08-06
+CUST-0020,Dunharrow Works,manufacturing,mid-market,India West,hybrid,2023-08-12,Bram Desai (Head of Data),P2,2023-08-12
+CUST-0021,Calderwick Studios,media,mid-market,India South,hybrid,2025-06-22,Kavya Engstrom (Operations Director),P2,2025-06-22
+CUST-0022,Halvery Stores,retail,mid-market,EMEA,hybrid,2024-10-24,Imran Engstrom (Platform Engineer),P2,2024-10-24
+CUST-0023,Tarnwick Insights,analytics,enterprise,India North,on_prem,2023-06-24,Dev Gallo (Operations Director),P2,2023-06-24
+CUST-0024,Elmscote Provisions,food,mid-market,India West,hybrid,2025-06-03,Elif Novak (Integration Lead),P2,2025-06-03
+CUST-0025,Varrow Assurance,insurance,enterprise,India South,hybrid,2024-02-05,Tara Kowalczyk (Integration Lead),P2,2024-02-05

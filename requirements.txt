@@ -1,0 +1,45 @@
+# NovaAssist workspace requirements — Python 3.12, Ubuntu LTS, CPU only.
+# Top-level pins aligned to the server's authoritative /opt/ce-requirements.lock (checked on ce-dev, 2026-10-20).
+# pymupdf and matplotlib are NOT in that lock yet: the kit needs them (PDF/OCR in M2, report charts) — pending owner approval.
+# torch comes from the CPU-only index (no CUDA wheels).
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+# LLM provider (behind novaassist/llm_client.py only)
+openai==1.109.1
+tiktoken==0.14.0
+
+# Local models (embeddings, reranker)
+torch==2.14.1+cpu
+sentence-transformers==6.1.0
+transformers==5.20.1
+
+# Retrieval
+faiss-cpu==1.15.1
+rank-bm25==0.2.2
+qdrant-client==1.19.1          # local embedded mode, M3 comparison step only — never wired into NovaAssist
+numpy==2.5.4
+pandas==3.0.6
+
+# Evaluation
+ragas==0.4.3
+langchain-community==0.3.31   # as in the server lock (ragas needs a 0.3.x langchain-community)
+
+# Tools / graph
+mcp==2.3.0
+neo4j==6.4.1
+
+# Documents / OCR
+pymupdf==2.0                   # NOT in the server lock yet (needed for M2 PDF/OCR)
+pytesseract==0.3.13
+pillow==13.0.0
+
+# Config, schemas
+pyyaml==6.0.3
+python-dotenv==1.2.4
+pydantic==2.14.1
+jsonschema==4.26.0             # validates golden scenarios and assembled trace records (already a JupyterLab dependency)
+
+# Notebooks, plots, tests
+matplotlib==3.11.2             # NOT in the server lock yet (report charts)
+jupyterlab==4.6.4
+ipykernel==7.4.0

@@ -1,0 +1,5 @@
+product_id,name,description,status
+PROD-01,NovaFlow,Integration platform for API and workflow integration.,active
+PROD-02,NovaSync,Enterprise data-synchronization engine.,active
+PROD-03,NovaEdge,Edge gateway delivered as software and an appliance image.,active
+PROD-04,NovaSync Home,Discontinued small-business sync tool.,discontinued

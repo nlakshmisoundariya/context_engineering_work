@@ -1,0 +1,15 @@
+# Experiment record template (EVALUATION_SPEC §13). Copy, fill, and keep with your traces.
+# Or build it in Python with tools.experiments.new_experiment(...).
+experiment_id: EXP-M3-<team>-01          # EXP-<module>-<team>-<nn>
+hypothesis: "<one sentence: what change, expected effect on which metric>"
+scenario_set: []                          # identical query/scenario IDs for both arms (paired comparison)
+dataset_version: null                     # from data/novatech/MANIFEST.json
+spec_versions: {baseline: null, variant: null}
+baseline_config: {}                       # configuration, not prose (spec + toggles)
+variant_config: {}                        # exactly ONE variable changed
+metrics_before: {}                        # the declared metric subset, baseline arm
+metrics_after: {}                         # same metrics, variant arm, same run parameters
+efficiency_delta: {tokens: null, latency_relative: null, cost_ccu: null}
+observation: ""                           # what moved, what did not, anything unexpected
+decision: ""                              # the engineering decision you take, with rationale (graded)
+trace_refs: {baseline: [], variant: []}

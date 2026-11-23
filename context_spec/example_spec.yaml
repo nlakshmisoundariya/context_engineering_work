@@ -1,0 +1,85 @@
+# NovaAssist Context Spec — example v0.1 (starter).
+# The contract for every context window: sources, priorities, budgets, freshness, selection,
+# compression and isolation per component. You author v1 in Module 1 and amend it in every module after.
+# Schema: docs/interfaces/context_spec.md (kit copy: context_spec/README.md).
+#
+# The 12,000-token budget is a SIMULATED application-level budget, enforced by NovaAssist and independent
+# of the model's native window. It exists to create controlled budget pressure.
+
+spec_version: "0.1"
+agent: NovaAssist
+today: 2026-06-01            # the dataset reference date T0: "today" for every lab; never the system clock
+
+budget:
+  total_tokens: 12000
+  response_reserve: 1500
+
+# Order of channels in the assembled window (top to bottom).
+assembly_order: [system, state, memory, knowledge, tool_definitions, tool_results, history, user_input]
+
+overflow:
+  # When budgets collide, evict from these channels first (system and user_input are never evicted).
+  evict_order: [history, knowledge, tool_results, memory, tool_definitions, state]
+
+components:
+  system:
+    source: system_files
+    files:                    # versioned system-context files (relative to this spec)
+      - system/v1/role.md
+      - system/v1/grounding.md
+      - system/v1/conflicts.md
+      - system/v1/tone.md
+    priority: 0               # 0 = highest; never evicted
+    token_budget: 800
+    freshness: null
+    selection: {}
+    compression: {method: none}
+    isolation: {enabled: false}
+
+  user_input:
+    source: request
+    priority: 1               # never evicted
+    token_budget: 500
+    freshness: null
+    selection: {}
+    compression: {method: none}
+    isolation: {enabled: false}
+
+  history:
+    source: history_store
+    priority: 5
+    token_budget: 2500
+    freshness: null
+    selection: {recent_turns: 6}          # verbatim recent window
+    compression: {method: none, trigger: null}
+    isolation: {enabled: false}
+
+  knowledge:
+    source: knowledge                      # chunk store + retrievers (Modules 2-4)
+    priority: 4
+    token_budget: 3500
+    freshness: {max_age_days: null, on_violation: flag}
+    selection: {top_k: 8}
+    compression: {method: none, trigger: null}
+    isolation: {enabled: false}
+
+  tools:
+    source: mcp                            # MCP tool layer (Module 6)
+    priority: 3
+    token_budget: {definitions: 700, results: 1500}
+    freshness: null
+    selection: {max_tools: 4}
+    compression: {method: none, trigger: null}
+    isolation: {enabled: false}
+
+  memory:
+    source: memory_store                   # memories + session-state summary share this budget (Module 5)
+    priority: 2
+    token_budget: 1000
+    freshness: {max_age_days: null, on_violation: flag}
+    selection: {max_memories: 5, min_confidence: null}
+    compression: {method: none, trigger: null}
+    isolation: {enabled: false}
+
+economics:
+  ccu_per_1k: {prompt: 1.0, completion: 4.0}   # Course Cost Units: provisional, for relative comparison only

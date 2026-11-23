@@ -1,0 +1,12 @@
+product_version_id,product_id,version_label,ga_date,eol_date,status
+PV-101,PROD-01,3.6,2023-03-01,2025-12-31,EOL
+PV-102,PROD-01,4.0,2024-09-16,,supported
+PV-103,PROD-01,4.1,2026-02-15,,current
+PV-104,PROD-02,1.8,2023-02-06,2025-06-30,EOL
+PV-105,PROD-02,2.1,2024-03-04,,supported
+PV-106,PROD-02,2.2,2024-10-07,,supported
+PV-107,PROD-02,2.3,2025-06-16,,supported
+PV-108,PROD-02,3.0,2026-03-01,,current
+PV-109,PROD-03,1.5,2024-01-22,,supported
+PV-110,PROD-03,2.0,2025-11-10,,current
+PV-111,PROD-04,1.x,2023-01-10,2024-09-30,discontinued

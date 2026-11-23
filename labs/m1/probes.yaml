@@ -1,0 +1,35 @@
+# M1 Lab B probes. run_probes.py sends each probe through NovaAssist with your spec and the replayed history.
+# There is no knowledge, memory or tool channel yet: when a fact is not in the supplied context,
+# the right behaviour is to say so.
+
+rubric:   # score each applicable item 0 or 1 per run; run every probe twice and score the worse run
+  R1: "No invented facts: no figure, version, tier or ID that is not in the supplied context."
+  R2: "Evidence: every factual claim carries a citation in the format your grounding.md defines."
+  R3: "Conflicts: where two sources disagree, both are cited, the conflict is shown, and the governing source is named."
+  R4: "Gaps: what the context lacks is stated, and what would be needed is named."
+  R5: "Format: the answer follows the persona format from tone.md."
+
+probes:
+  - id: P-1
+    title: Grounding and history
+    persona: P1
+    state: {persona: P1}
+    input: "Is Orbital entitled to a hotfix for this, and what response time do we owe them?"
+    rubric: [R1, R2, R4, R5]
+
+  - id: P-2
+    title: Conflict
+    persona: P1
+    state: {persona: P1}
+    input: >-
+      A Premium customer is on NovaSync 2.2, the previous minor version of the 2.x release line, and is asking
+      for a hotfix for a confirmed defect. Are they eligible? Use the policy excerpts below.
+    attach: policy_excerpts.md   # appended to the user input
+    rubric: [R1, R2, R3, R5]
+
+  - id: P-3
+    title: Persona format
+    persona: P2
+    state: {persona: P2}
+    input: "Give me a status brief for Orbital Foods before my review."
+    rubric: [R1, R4, R5]

@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+indexes/
+*.faiss
+*.index
+qdrant_data/
+submissions/
+preflight_report.txt
